@@ -28,6 +28,22 @@ const projects = [
     description: 'Custom karts, practice laps and races against real players. A racing experience built for the browser.',
     tags: ['RACING', 'MULTIPLAYER', 'WEB GAME'],
   },
+  {
+    no: '03', title: 'SOAP UNIVERSE', subtitle: 'Interactive world and arcade', kind: 'soap',
+    image: '/soap-preview.png', alt: 'SOAP Universe website with a blue-clad ape, neon arcade visuals and Escape the Timeline game',
+    domain: 'SOAP-ESCAPE-THE-TIMELINE.VERCEL.APP', poster: 'SOAP', category: 'ARCADE / INTERACTIVE WORLD',
+    link: 'https://soap-escape-the-timeline.vercel.app/',
+    description: 'A playful universe built around a happy ape and a chaotic timeline. Explore the character, discover the story and play Escape the Timeline in the browser.',
+    tags: ['ARCADE', 'WEB GAME', 'WORLD-BUILDING'],
+  },
+  {
+    no: '04', title: '$OFFLINE', subtitle: 'An experiment in disconnection', kind: 'offline',
+    image: '/offline-preview.png', alt: '$OFFLINE website with lime-green typography and NULL, a mysterious pixel creature',
+    domain: 'TINYBLOOM33.CHATGPT.SITE', poster: '$OFFLINE', category: 'INTERACTIVE EXPERIMENT',
+    link: 'https://offline-null-experiment.tinybloom33.chatgpt.site/',
+    description: 'Prepare the experience, disconnect and meet NULL. A strange little world of hidden places, puzzles and conversation that stays with you offline.',
+    tags: ['OFFLINE EXPERIENCE', 'INTERACTIVE STORY', 'PUZZLES'],
+  },
 ];
 
 function FranxxMark({ className = '' }) {

@@ -29,7 +29,7 @@
 .universe-heading h2>span{color:var(--red)}
 .universe-heading>p{font:11px/1.9 'Courier New',monospace;color:var(--muted);margin:0 4% 4px 0}
 .universe-layout{display:grid;grid-template-columns:1.55fr 1fr;gap:6vw;align-items:center}
-.constellation{position:relative;aspect-ratio:4/3;min-width:0;isolation:isolate}
+.constellation{position:relative;aspect-ratio:4/3;min-width:0;min-height:310px;isolation:isolate}
 .constellation-drawing{position:absolute;inset:0;width:100%;height:100%;color:var(--ink);overflow:visible;pointer-events:none}
 .map-orbit{fill:none;stroke:#19191920;stroke-width:1;stroke-dasharray:2 6;transform-origin:center}
 .map-orbit-one{animation:map-orbit-turn 80s linear infinite}.map-orbit-two{stroke:#d64c5820;animation:map-orbit-turn 110s linear infinite reverse}
@@ -38,10 +38,9 @@
 .constellation-core{position:absolute;width:105px;height:105px;top:50%;left:50%;translate:-50% -50%;background:var(--ink);color:#e99b9f;border-radius:46% 54% 57% 43%/51% 42% 58% 49%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;rotate:-8deg;animation:map-core-drift 14s ease-in-out infinite}
 .constellation-core:after{content:'';position:absolute;inset:-9px;border:1px solid #19191925;border-radius:50%;rotate:16deg}
 .constellation-core>svg{width:35px;height:35px}.constellation-core>span{font:6px 'Courier New',monospace;letter-spacing:1.4px;color:var(--page)}
-.constellation-node{position:absolute;translate:-50% -50%;background:none;border:0;padding:13px 9px;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer;z-index:2;color:var(--ink);white-space:nowrap;border-radius:10px}
-.node-0{left:18%;top:28%}.node-1{left:75%;top:20%}.node-2{left:80%;top:72%}.node-3{left:20%;top:78%}
+.constellation-node{position:absolute;left:var(--node-x);top:var(--node-y);translate:-50% -50%;background:none;border:0;padding:13px 9px;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer;z-index:2;color:var(--ink);white-space:nowrap;border-radius:10px}
 .node-planet{position:relative;width:62px;height:62px;background:var(--page);border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;box-shadow:3px 4px 0 #19191913;transition:background .35s,color .35s,rotate .5s;animation:node-drift 8s ease-in-out infinite}
-.node-1 .node-planet{animation-delay:-2s}.node-2 .node-planet{animation-delay:-4s}.node-3 .node-planet{animation-delay:-6s}
+.node-1 .node-planet{animation-delay:-2s}.node-2 .node-planet{animation-delay:-4s}.node-3 .node-planet{animation-delay:-6s}.node-4 .node-planet{animation-delay:-3s}.node-5 .node-planet{animation-delay:-5s}
 .node-planet:before{content:'';position:absolute;inset:-6px;border:1px solid transparent;border-radius:50%;transition:border-color .35s}
 .constellation-node:hover .node-planet,.constellation-node:focus-visible .node-planet{background:#ecd9d4;rotate:-12deg}
 .constellation-node.is-selected .node-planet{color:var(--page);background:var(--red);border-color:var(--red)}
@@ -121,10 +120,10 @@
 @media(max-width:1100px){.universe-layout{grid-template-columns:1.2fr 1fr;gap:4vw}.constellation-core{width:85px;height:85px}.constellation-core>svg{width:29px;height:29px}.constellation-core>span{font-size:5px}.node-planet{width:50px;height:50px}.node-caption{font-size:8px;gap:5px}.node-caption>small{font-size:7px}.constellation-node{gap:10px;padding:10px 7px}.destination-image{height:180px}.destination-description{min-height:130px;font-size:11px}.universe-heading>p{font-size:10px;margin-right:0}.universe-panel h3{font-size:30px}}
 @media(max-width:760px){
   .hero-copy{translate:none}.desktop-navigation a{translate:none}.section-index{font-size:8px;letter-spacing:.8px}.preview-domain{font-size:7px}.filetop{font-size:7px}.project-subtitle{font-size:8px}.description{font-size:12px}.skills span{font-size:7px;padding:9px}.project-heading{margin-top:23px}.file+.file{margin-top:60px}
-  .universe{padding-top:20px;padding-bottom:65px}.universe-heading{display:block;margin-bottom:20px}.universe-heading h2{font-size:15vw;line-height:1;margin-top:16px}.universe-heading>p{margin:21px 0 0;font-size:10px;line-height:1.7}.universe-layout{display:block}.constellation{width:100%;margin:10px auto 30px;min-height:285px;aspect-ratio:4/3}.constellation-node{padding:10px 5px;gap:9px}.node-planet{width:48px;height:48px}.node-planet>svg{width:21px;height:21px}.node-caption{font-size:8px;gap:4px}.node-caption>small{font-size:6px}.node-0{left:20%;top:26%}.node-1{left:76%;top:20%}.node-2{left:78%;top:73%}.node-3{left:21%;top:79%}.constellation-core{width:78px;height:78px;gap:8px}.constellation-core:after{inset:-7px}.constellation-core>svg{width:27px;height:27px}.constellation-core>span{font-size:5px;letter-spacing:.8px}
+  .universe{padding-top:20px;padding-bottom:65px}.universe-heading{display:block;margin-bottom:20px}.universe-heading h2{font-size:15vw;line-height:1;margin-top:16px}.universe-heading>p{margin:21px 0 0;font-size:10px;line-height:1.7}.universe-layout{display:block}.constellation{width:100%;margin:10px auto 30px;min-height:285px;aspect-ratio:4/3}.constellation-node{padding:10px 5px;gap:9px}.node-planet{width:48px;height:48px}.node-planet>svg{width:21px;height:21px}.node-caption{font-size:8px;gap:4px}.node-caption>small{font-size:6px}.constellation-core{width:78px;height:78px;gap:8px}.constellation-core:after{inset:-7px}.constellation-core>svg{width:27px;height:27px}.constellation-core>span{font-size:5px;letter-spacing:.8px}
   .universe-panels{padding:0 4px}.destination-image{height:190px;margin-bottom:27px}.destination-category{font-size:8px}.universe-panel h3{font-size:32px}.destination-description{min-height:82px;font-size:12px;margin:13px 0 17px}.destination-link{font-size:9px;gap:28px}.inspiration{padding-top:25px}.inspiration-heading>a{font-size:8px}.character-panel figcaption>span{font-size:6px}.profile-copy>p:not(.profile-lead){font-size:12px}.contact-link{padding-top:22px;padding-bottom:22px}.contact-platform{font-size:9px}.contact-bottom{font-size:6px;gap:12px;letter-spacing:0}.flight-dock{padding:11px 15px;gap:14px}.flight-dock nav{gap:15px}.flight-dock nav a,.flight-dock nav a>span{font-size:8px}.journey-progress{font-size:8px;padding-left:11px}.journey-progress>span{width:27px}footer{font-size:6px;gap:14px}.back-top{font-size:7px}
 }
-@media(max-width:370px){.constellation{min-height:260px}.node-caption{font-size:7px}.constellation-core{width:66px;height:66px}.constellation-core>svg{width:23px;height:23px}.constellation-node{gap:8px}.node-planet{width:43px;height:43px}.node-1{left:74%}.node-2{left:76%}.destination-image{height:165px}.universe-panel h3{font-size:29px}.flight-dock{gap:10px;padding:11px 13px}.flight-dock nav{gap:10px}.flight-dock nav a,.flight-dock nav a>span{font-size:7px}.journey-progress{font-size:7px;padding-left:8px}.contact-platform{font-size:8px;min-width:61px}.contact-identity{gap:12px}}
+@media(max-width:370px){.constellation{min-height:260px}.node-caption{font-size:7px}.constellation-core{width:66px;height:66px}.constellation-core>svg{width:23px;height:23px}.constellation-node{gap:8px}.node-planet{width:43px;height:43px}.destination-image{height:165px}.universe-panel h3{font-size:29px}.flight-dock{gap:10px;padding:11px 13px}.flight-dock nav{gap:10px}.flight-dock nav a,.flight-dock nav a>span{font-size:7px}.journey-progress{font-size:7px;padding-left:8px}.contact-platform{font-size:8px;min-width:61px}.contact-identity{gap:12px}}
 /* The header is a miniature, playable version of the illustrated universe. */
 .site-header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;column-gap:clamp(20px,3.8vw,72px)}
 .header-universe{position:relative;width:100%;max-width:900px;height:84px;justify-self:center;display:flex;justify-content:center;align-items:center;isolation:isolate}
@@ -155,7 +154,7 @@
 /* Replace oversized gaps with a closer, editorial rhythm. */
 .section-shell{padding-top:76px;padding-bottom:76px}
 .section-heading{margin-bottom:42px}
-.file:nth-child(2){margin-top:55px}
+.file:nth-child(2n){margin-top:55px}
 .project-grid{gap:4vw}
 .universe{padding-top:40px;padding-bottom:60px}
 .universe-heading{margin-bottom:16px}
